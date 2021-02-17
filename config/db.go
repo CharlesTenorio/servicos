@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"github.com/CharlesTenorio/servicos/config"
+	"github.com/CharlesTenorio/servicos/models"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
@@ -19,7 +20,8 @@ func Init() {
 	if err != nil {
 		panic("DB Connection Error")
 	}
-	db.AutoMigrate(&model.Time{})
+	db.AutoMigrate(&models.Time{})
+	db.AutoMigrate(&models.Liga{})
 
 }
 
